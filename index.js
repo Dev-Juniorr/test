@@ -32,7 +32,6 @@ app.get("/test", (req, res) => {
 
 app.post("/test", async (req, res) => {
   const {ok, message} = req.body;
-  console.log(message);
   const newMessage = new Message({ok, message})
   const savedMessage = await newMessage.save()
   res.status(200).json(savedMessage);
